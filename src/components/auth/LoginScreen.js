@@ -5,30 +5,33 @@ export const LoginScreen = () => {
     return (
         <div>
 
-            <h3>Login</h3>
+            <h3 className="auth__title">Login</h3>
 
             <form>
 
                 <input
                     type="text"
-                    placeholder="email"
+                    placeholder="Email"
                     name="email"
+                    className="auth__input"
+                    autoComplete="off"
                 />
 
                 <input
                     type="text"
                     placeholder="Password"
                     name="password"
+                    className="auth__input"
                 />
 
                 <button
                     type="submit"
+                    className="btn btn-primary btn-block"
                 >
                     Login
                 </button>
 
-                <hr />
-                <div>
+                <div className="auth__social-networks">
                     <p>Login with social networks</p>
                     <div 
                         className="google-btn"
@@ -42,7 +45,7 @@ export const LoginScreen = () => {
                     </div>
                 </div>
 
-                <Link to="/auth/register">
+                <Link to="/auth/register" className="link">
                     Create new account
                 </Link>
 

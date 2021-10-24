@@ -1,0 +1,20 @@
+.auth {
+
+    &__main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $c-primary;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &__box-container {
+        background-color: #fff;
+        box-shadow: 0px 3px 2px $c-dark-gray;
+        border-radius: 3px;
+        padding: 20px;
+        width: 250px;
+    }
+}

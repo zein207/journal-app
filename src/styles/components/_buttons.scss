@@ -7,6 +7,7 @@
     font-size: 0.9rem;
     padding: 7px 10px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+    transition: color 0.3s ease;
 
     &:focus {
         outline: none;
@@ -26,6 +27,10 @@
 
     &-block {
         width: 100%;
+    }
+
+    &:hover {
+        color: darken(#fff, 15);
     }
 
 }

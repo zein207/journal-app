@@ -1,0 +1,58 @@
+
+//Colors
+$primary: #5c62c5;
+$dark-grey: #363636;
+$light-grey: #d8d8d8;
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669f2;
+
+// Breakpoints - Min
+$screen-bs-min:                     0;
+$screen-xs-min:                     360px;
+$screen-sm-min:                     480px;
+$screen-md-min:                     768px;
+$screen-lg-min:                     1024px;
+$screen-xl-min:                     1280px;
+$screen-xxl-min:                    1440px;
+$screen-hd-min:                     1920px;
+// Breakpoints - Max
+$screen-bs-max:                     $screen-xs-min - 1; // 359px
+$screen-xs-max:                     $screen-sm-min - 1; // 479px
+$screen-sm-max:                     $screen-md-min - 1; // 767px
+$screen-md-max:                     $screen-lg-min - 1; // 1023px
+$screen-lg-max:                     $screen-xl-min - 1; // 1279px
+$screen-xl-max:                     $screen-xxl-min - 1; // 1439px
+$screen-xxl-max:                    $screen-hd-min - 1; // 1919px
+
+// Breakpoints - Map
+$breakpoints-min: (
+    bs:                             $screen-bs-min,
+    xs:                             $screen-xs-min,
+    sm:                             $screen-sm-min,
+    md:                             $screen-md-min,
+    lg:                             $screen-lg-min,
+    xl:                             $screen-xl-min,
+    xxl:                            $screen-xxl-min,
+    hd:                             $screen-hd-min
+);
+$breakpoints-max: (
+    bs:                             $screen-bs-max,
+    xs:                             $screen-xs-max,
+    sm:                             $screen-sm-max,
+    md:                             $screen-md-max,
+    lg:                             $screen-lg-max,
+    xl:                             $screen-xl-max,
+    xxl:                            $screen-xxl-max,
+    hd:                             10000px
+);
+$breakpoints: (
+    bs:                             (min: $screen-bs-min, max: $screen-bs-max),
+    xs:                             (min: $screen-xs-min, max: $screen-xs-max),
+    sm:                             (min: $screen-sm-min, max: $screen-sm-max),
+    md:                             (min: $screen-md-min, max: $screen-md-max),
+    lg:                             (min: $screen-lg-min, max: $screen-lg-max),
+    xl:                             (min: $screen-xl-min, max: $screen-xl-max),
+    xxl:                            (min: $screen-xxl-min, max: $screen-xxl-max),
+    hd:                             (min: $screen-hd-min, max: 10000px)
+);

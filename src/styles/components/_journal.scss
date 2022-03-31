@@ -1,0 +1,95 @@
+
+.journal {
+
+    &__main-content {
+        display: flex;
+        @include mediaTo(md) {
+            flex-direction: column;
+        }
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        background-color: $dark-grey;
+        color: #fff;
+        height: 100vh;
+        padding: 10px;
+        width: 450px;
+        box-sizing: border-box;
+    }
+
+    &__sidebar-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+            font-weight: lighter;
+        }
+    }
+
+    &__new-entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-top: 30px;
+        width: 100%;
+        transition-property: color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+
+        &:hover {
+            color: darken(#fff, 20);
+        }
+    }
+
+    &__entries {
+
+        margin-top: 30px;
+        flex: 1 1 auto;
+        overflow: scroll;
+    }
+
+    &__entry {
+
+        display: flex;
+        margin-bottom: 10px;
+        overflow: hidden;
+        background-color: #fff;
+        border-radius: 4px;
+        color: $dark-grey;
+
+        &-picture {
+            height: 75px;
+            width: 75px;
+        }
+
+        &-body {
+            padding: 10px;
+        }
+
+        &-title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        &-content {
+            font-size: 10px;
+        }
+
+        &-date-box {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5px;
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -44,7 +44,7 @@ export const LoginScreen = () => {
                 />
 
                 <input
-                    type="text"
+                    type="password"
                     placeholder="Password"
                     name="password"
                     className="auth__input"

@@ -1,0 +1,12 @@
+.loading {
+    &__main-content {
+        background-color: $c-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        height: 100vh;
+    }
+}

@@ -23,7 +23,7 @@ export const NoteScreen = () => {
                 <div className="notes__image">
                     <img
                         src="/bg-1.jpg"
-                        alt="Image"
+                        alt="random"
                     />
                 </div>
 

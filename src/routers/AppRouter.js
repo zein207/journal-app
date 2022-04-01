@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
     BrowserRouter as Router,
-    Switch, Route, Redirect
+    Switch, Redirect
 } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
@@ -11,6 +11,8 @@ import { JournalScreen } from '../components/journal/JournalScreen';
 import { AuthRouter } from './AuthRouter';
 import { login } from '../actions/auth';
 import { LoadingScreen } from '../components/journal/LoadingScreen';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 
 
@@ -47,8 +49,8 @@ export const AppRouter = () => {
             <div>
                 <Switch>
 
-                    <Route path="/auth" component={ AuthRouter } />
-                    <Route path="/" component={ JournalScreen } exact />
+                    <PublicRoute path="/auth" component={ AuthRouter } isAuthenticated={ isLoggedIn } />
+                    <PrivateRoute path="/" component={ JournalScreen } exact isAuthenticated={ isLoggedIn } />
 
                     <Redirect to="/auth/login" />
 

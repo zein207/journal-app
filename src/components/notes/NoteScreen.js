@@ -16,12 +16,17 @@ export const NoteScreen = () => {
     const { body, title } = formValues;
 
     const activeId = useRef( note.id );
+    const activeUrl = useRef( note.url );
 
     useEffect( () => {
 
         if( note.id !== activeId.current ) {
             reset( note );
             activeId.current = note.id
+        }
+        if( note.url !== activeUrl.current ) {
+            reset( note );
+            activeUrl.current = note.url;
         }
 
     }, [ note, reset ]);
@@ -62,7 +67,7 @@ export const NoteScreen = () => {
                     (
                         <div className="notes__image">
                             <img
-                                src="/bg-1.jpg"
+                                src={ note.url }
                                 alt="random"
                             />
                         </div>

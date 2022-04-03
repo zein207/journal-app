@@ -25,6 +25,17 @@
         }
     }
 
+    &-danger {
+        background-color: red;
+        transition-property: background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+
+        &:hover {
+            background-color: darken(red, 10);
+        }
+    }
+
     &-block {
         width: 100%;
     }

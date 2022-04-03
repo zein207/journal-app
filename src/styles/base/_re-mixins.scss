@@ -1,0 +1,57 @@
+// /* ----------Media Queries---------- */
+@function breakpointMinExist($breakpoint){
+    @return map-has-key($breakpoints-min, $breakpoint);
+}
+@function breakpointMaxExist($breakpoint){
+    @return map-has-key($breakpoints-max, $breakpoint);
+}
+@function breakpointMinVal($breakpoint){
+    @return map-get($breakpoints-min, $breakpoint);
+}
+@function breakpointMaxVal($breakpoint){
+    @return map-get($breakpoints-max, $breakpoint);
+}
+/// @name BreakpointIsValid
+@function breakpointIsValid($breakpoint){
+    @return type_of($breakpoint) == number and unit($breakpoint) == px or unit($breakpoint) == em or unit($breakpoint) == rem;
+};
+/// @name MediaFrom
+/// @author Iván López Luna [Re]
+/// @access public
+/// @param {string, number} $breakpoint-min
+/// @since Resilient 3.3.0
+@mixin mediaFrom($breakpoint-min){
+    @if breakpointMinExist($breakpoint-min){
+        @media screen and (min-width: breakpointMinVal($breakpoint-min)) {
+            @content;
+        }
+    }
+    @else if breakpointIsValid($breakpoint-min){
+        @media screen and (min-width: $breakpoint-min){
+            @content;
+        }
+    }
+    @else{
+        @error 'No value could be retrieved from "#{$breakpoint-min}". It is either not defined in the map, or it is an invalid number of px, em, or rem.';
+    }
+}
+/// @name MediaTo
+/// @author Iván López Luna [Re]
+/// @access public
+/// @param {string, number} $breakpoint-max
+/// @since Resilient 3.3.0
+@mixin mediaTo($breakpoint-max){
+    @if breakpointMaxExist($breakpoint-max){
+        @media screen and (max-width: breakpointMaxVal($breakpoint-max)) {
+            @content;
+        }
+    }
+    @else if breakpointIsValid($breakpoint-max){
+        @media screen and (max-width: $breakpoint-max){
+            @content;
+        }
+    }
+    @else{
+        @error 'No value could be retrieved from "#{$breakpoint-max}". It is either not defined in the map, or it is an invalid number of px, em, or rem.';
+    }
+}

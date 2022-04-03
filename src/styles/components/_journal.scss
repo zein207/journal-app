@@ -3,6 +3,10 @@
 
     &__main-content {
         display: flex;
+
+        @include mediaTo(md) {
+            flex-direction: column;
+        }
     }
 
     &__sidebar {
@@ -13,6 +17,11 @@
         height: 100vh;
         width: 500px;
         padding: 0 1rem;
+        box-sizing: border-box;
+
+        @include mediaTo(md) {
+            width: 100%;
+        }
 
         &-navbar {
             display: flex;
